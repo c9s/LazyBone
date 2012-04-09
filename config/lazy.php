@@ -10,7 +10,7 @@ return array(
     ),
   'data_sources' => array( 
       'default' => array( 
-          'dsn' => 'sqlite:tests.db',
+          'dsn' => 'sqlite:/tmp/todos.db',
         ),
     ),
 );

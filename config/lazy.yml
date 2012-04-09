@@ -6,4 +6,4 @@ schema:
     - model
 data_sources:
   default:
-    dsn: 'sqlite:tests.db'
+    dsn: 'sqlite:/tmp/todos.db'

@@ -14,14 +14,23 @@ class TodoSchemaProxy extends RuntimeSchema
       'attributes' => array( 
           'type' => 'integer',
           'isa' => 'int',
+          'primary' => true,
           'autoIncrement' => true,
         ),
     ),
-  'text' => array( 
-      'name' => 'text',
+  'title' => array( 
+      'name' => 'title',
       'attributes' => array( 
           'type' => 'text',
           'isa' => 'str',
+        ),
+    ),
+  'done' => array( 
+      'name' => 'done',
+      'attributes' => array( 
+          'type' => 'boolean',
+          'isa' => 'bool',
+          'default' => false,
         ),
     ),
   'created_on' => array( 
@@ -35,10 +44,11 @@ class TodoSchemaProxy extends RuntimeSchema
 );
         $this->columnNames     = array( 
   'id',
-  'text',
+  'title',
+  'done',
   'created_on',
 );
-        $this->primaryKey      = NULL;
+        $this->primaryKey      = 'id';
         $this->table           = 'todos';
         $this->modelClass      = 'Todo';
         $this->collectionClass = 'TodoCollection';
