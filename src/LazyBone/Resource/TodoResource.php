@@ -6,20 +6,20 @@ use TodoCollection;
 
 class TodoResource extends ResourceHandler
 {
-	public function create()
-	{ 
+    public function create()
+    { 
         $vars = json_decode($this->readInput(),true);
-		$todo = new Todo;
-		$ret = $todo->create($vars);
+        $todo = new Todo;
+        $ret = $todo->create($vars);
         if( $ret->success ) {
             return $todo->toArray();
         }
         $this->codeBadRequest();
         return array( 'error' => $ret->message );
-   	}
+    }
 
-	public function update($id) 
-	{
+    public function update($id) 
+    {
         $todo = new Todo( $id );
         if( ! $todo->id ) {
             return $this->codeNotFound();
@@ -33,9 +33,9 @@ class TodoResource extends ResourceHandler
             return $todo->toArray();
         }
         return $this->codeBadRequest();
-   	}
+    }
 
-	// delete a record.
+    // delete a record.
     public function delete($id) 
     {
         $todo = new Todo( $id );
@@ -44,7 +44,7 @@ class TodoResource extends ResourceHandler
             'success' => $ret->success,
             'id' => $id,
         );
-   	}
+    }
 
     // load one record
     public function load($id)   
@@ -53,12 +53,12 @@ class TodoResource extends ResourceHandler
         return $todo->toArray();
     }
 
-	// find records
-	public function find()      
-	{ 
-		$todos = new TodoCollection;
-		return $todos->toArray();
-	}
+    // find records
+    public function find()      
+    { 
+        $todos = new TodoCollection;
+        return $todos->toArray();
+    }
 
 }
 
