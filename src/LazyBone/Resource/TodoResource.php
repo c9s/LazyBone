@@ -46,12 +46,12 @@ class TodoResource extends ResourceHandler
         );
    	}
 
-	// load one record
-	public function load($id)   
-	{
-		$todo = new Todo( $id );
-		return $todo->toArray();
-   	}
+    // load one record
+    public function load($id)   
+    {
+        $todo = new Todo( $id );
+        return $todo->toArray();
+    }
 
 	// find records
 	public function find()      
