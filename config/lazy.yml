@@ -1,0 +1,9 @@
+---
+bootstrap:
+  - bootstrap.php
+schema:
+  paths:
+    - model
+data_sources:
+  default:
+    dsn: 'sqlite:tests.db'
