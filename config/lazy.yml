@@ -4,6 +4,8 @@ bootstrap:
 schema:
   paths:
     - model
-data_sources:
-  default:
-    dsn: 'sqlite:/tmp/todos.db'
+data_source:
+  default: sqlite
+  nodes:
+    sqlite:
+      dsn: 'sqlite:/tmp/todos.db'
